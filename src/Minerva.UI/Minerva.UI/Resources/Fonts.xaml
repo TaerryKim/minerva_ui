@@ -1,0 +1,8 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <FontFamily x:Key="Spoqa_Han_Sans">/Minerva.UI;component/Resources/Fonts/#SpoqaHanSans</FontFamily>
+    <FontFamily x:Key="UniNeue_HeavyItalic">/Minerva.UI;component/Resources/Fonts/#Uni Neue Heavy</FontFamily>
+    <FontFamily x:Key="UniNeue_Light">/Minerva.UI;component/Resources/Fonts/#Uni Neue Light</FontFamily>
+    
+</ResourceDictionary>

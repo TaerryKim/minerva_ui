@@ -1,0 +1,14 @@
+﻿<ui:MnvNavigationWindows x:Class="Minerva.UI.Demo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Minerva.UI.Demo"
+        mc:Ignorable="d"
+        xmlns:ui="clr-namespace:Minerva.UI.Controls;assembly=Minerva.UI"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <ui:MnvRoundCornerButton Width="100" Height="100" HorizontalAlignment="Left" Content="Hello"/>
+        <ui:MnvRoundCornerButton Width="50" Height="50" Content="Hello" CornerRadius="15" MouseClickBrush="Red"/>
+    </Grid>
+</ui:MnvNavigationWindows>

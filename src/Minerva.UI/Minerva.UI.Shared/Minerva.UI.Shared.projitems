@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>df0bde32-74ea-465b-a06f-de480a30dab7</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>Minerva.UI</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\BooleanToVisibilityConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\BorderClipConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\MnvRoundCornerButton.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\MnvNavigationWindows.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\MnvSpacingStackPanel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\WindowSizeWithMarginConverter.cs" />
+  </ItemGroup>
+</Project>
