@@ -1,0 +1,34 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                    xmlns:options="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options"
+                    mc:Ignorable="options">
+    
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../Resources/Colors.xaml"/>
+        <ResourceDictionary Source="../Resources/Fonts.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <!-- Button -->
+    <SolidColorBrush x:Key="ButtonBgBrush" Color="{DynamicResource Pale-Grey}"/>
+    <SolidColorBrush x:Key="ButtonFgBrush" Color="{DynamicResource Slate-Grey}"/>
+    <SolidColorBrush x:Key="ButtonBdBrush" Color="{DynamicResource Pale-Grey}"/>
+    
+    <SolidColorBrush x:Key="ButtonMouseOverBgBrush" Color="{DynamicResource Pale-Grey}"/>
+    <SolidColorBrush x:Key="ButtonMouseOverFgBrush" Color="{DynamicResource Slate-Grey}"/>
+    <SolidColorBrush x:Key="ButtonMouseOverBdBrush" Color="{DynamicResource Flat-Blue}"/>
+    
+    <SolidColorBrush x:Key="ButtonMouseClickBgBrush" Color="{DynamicResource Flat-Blue}"/>
+    <SolidColorBrush x:Key="ButtonMouseClickFgBrush" Color="{DynamicResource White}"/>
+    <SolidColorBrush x:Key="ButtonMouseClickBdBrush" Color="{DynamicResource Flat-Blue}"/>
+
+    <!-- Windows -->
+    <SolidColorBrush x:Key="WindowBgBrush"    Color="{DynamicResource Panel-White}"/>
+    <SolidColorBrush x:Key="WindowBdBrush"    Color="{DynamicResource Warm-Grey-Two}"/>
+    <SolidColorBrush x:Key="WindowTitleBrush" Color="{DynamicResource Azure-Two}"/>
+    
+    <!-- Control Box -->
+    <SolidColorBrush x:Key="MinimizeButtonColor" Color="{DynamicResource Yellow-Orange}"/>
+    <SolidColorBrush x:Key="MaximizeButtonColor" Color="{DynamicResource Weird-Green}"/>
+    <SolidColorBrush x:Key="CloseButtonColor"    Color="{DynamicResource Tomato}"/>
+</ResourceDictionary>

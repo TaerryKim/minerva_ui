@@ -1,0 +1,17 @@
+C:\Users\DELL\Desktop\minerva_ui\src\Minerva.UI\Minerva.UI\bin\Debug\Minerva.UI.dll
+C:\Users\DELL\Desktop\minerva_ui\src\Minerva.UI\Minerva.UI\bin\Debug\Minerva.UI.pdb
+C:\Users\DELL\Desktop\minerva_ui\src\Minerva.UI\Minerva.UI\obj\Debug\Controls\Controls.baml
+C:\Users\DELL\Desktop\minerva_ui\src\Minerva.UI\Minerva.UI\obj\Debug\Resources\Fonts.baml
+C:\Users\DELL\Desktop\minerva_ui\src\Minerva.UI\Minerva.UI\obj\Debug\Resources\Colors.baml
+C:\Users\DELL\Desktop\minerva_ui\src\Minerva.UI\Minerva.UI\obj\Debug\Themes\KaiserBlue.baml
+C:\Users\DELL\Desktop\minerva_ui\src\Minerva.UI\Minerva.UI\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\DELL\Desktop\minerva_ui\src\Minerva.UI\Minerva.UI\obj\Debug\Minerva.UI_MarkupCompile.cache
+C:\Users\DELL\Desktop\minerva_ui\src\Minerva.UI\Minerva.UI\obj\Debug\Minerva.UI_MarkupCompile.lref
+C:\Users\DELL\Desktop\minerva_ui\src\Minerva.UI\Minerva.UI\obj\Debug\Controls\Controls.Layouts.baml
+C:\Users\DELL\Desktop\minerva_ui\src\Minerva.UI\Minerva.UI\obj\Debug\Controls\Controls.Windows.baml
+C:\Users\DELL\Desktop\minerva_ui\src\Minerva.UI\Minerva.UI\obj\Debug\Controls\Controls.Buttons.baml
+C:\Users\DELL\Desktop\minerva_ui\src\Minerva.UI\Minerva.UI\obj\Debug\Minerva.UI.g.resources
+C:\Users\DELL\Desktop\minerva_ui\src\Minerva.UI\Minerva.UI\obj\Debug\Minerva.UI.csproj.CoreCompileInputs.cache
+C:\Users\DELL\Desktop\minerva_ui\src\Minerva.UI\Minerva.UI\obj\Debug\Minerva.UI.dll
+C:\Users\DELL\Desktop\minerva_ui\src\Minerva.UI\Minerva.UI\obj\Debug\Minerva.UI.pdb
+C:\Users\DELL\Desktop\minerva_ui\src\Minerva.UI\Minerva.UI\obj\Debug\Minerva.UI.csprojResolveAssemblyReference.cache

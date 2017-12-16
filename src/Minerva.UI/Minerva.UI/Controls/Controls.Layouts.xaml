@@ -1,0 +1,48 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:ui="clr-namespace:Minerva.UI.Controls">
+    
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../Themes/KaiserBlue.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style TargetType="{x:Type ui:MnvRoundCornerButton}">
+        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+        <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True"/>
+        <Setter Property="BorderThickness" Value="3"/>
+        <Setter Property="Background" Value="{DynamicResource ButtonBgBrush}"/>
+        <Setter Property="Foreground" Value="{DynamicResource ButtonFgBrush}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource ButtonBdBrush}"/>
+        <Setter Property="MouseOverBrush" Value="{DynamicResource ButtonMouseOverBgBrush}"/>
+        <Setter Property="MouseOverForegroundBrush" Value="{DynamicResource ButtonMouseOverFgBrush}"/>
+        <Setter Property="MouseOverBorderBrush" Value="{DynamicResource ButtonMouseOverBdBrush}"/>
+        <Setter Property="MouseClickBrush" Value="{DynamicResource ButtonMouseClickBgBrush}"/>
+        <Setter Property="MouseClickForegroundBrush" Value="{DynamicResource ButtonMouseClickFgBrush}"/>
+        <Setter Property="MouseClickBorderBrush" Value="{DynamicResource ButtonMouseClickBdBrush}"/>
+        <Setter Property="FontFamily" Value="{DynamicResource UniNeue_HeavyItalic}"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ui:MnvRoundCornerButton}">
+                    <Border x:Name="PART_Border" CornerRadius="{TemplateBinding CornerRadius}" Padding="{TemplateBinding Padding}" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                        <TextBlock x:Name="PART_Content" Text="{TemplateBinding Content}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter TargetName="PART_Border"  Property="Background"  Value="{Binding Path=MouseOverBrush, RelativeSource={RelativeSource TemplatedParent}}"/>
+                            <Setter TargetName="PART_Content" Property="Foreground"  Value="{Binding Path=MouseOverForegroundBrush, RelativeSource={RelativeSource TemplatedParent}}"/>
+                            <Setter TargetName="PART_Border"  Property="BorderBrush" Value="{Binding Path=MouseOverBorderBrush, RelativeSource={RelativeSource TemplatedParent}}"/>
+                            <Setter Property="Cursor" Value="Hand"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="true">
+                            <Setter TargetName="PART_Border"  Property="Background"  Value="{Binding Path=MouseClickBrush, RelativeSource={RelativeSource TemplatedParent}}"/>
+                            <Setter TargetName="PART_Content" Property="Foreground"  Value="{Binding Path=MouseClickForegroundBrush, RelativeSource={RelativeSource TemplatedParent}}"/>
+                            <Setter TargetName="PART_Border"  Property="BorderBrush" Value="{Binding Path=MouseClickBorderBrush, RelativeSource={RelativeSource TemplatedParent}}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>
