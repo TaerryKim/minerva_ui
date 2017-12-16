@@ -5,12 +5,12 @@ using System.Windows.Data;
 
 namespace Minerva.UI.Converters
 {
-    class BooleanToVisibilityConverter : IValueConverter
+    public class BooleanToVisibilityConverter : IValueConverter
     {
         #region [ Public Methods ]
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if (targetType == typeof(Visibility))
+            if (value.GetType() == typeof(bool) && targetType == typeof(Visibility))
             {
                 return System.Convert.ToBoolean(value, culture) ? Visibility.Visible : Visibility.Collapsed;
             }

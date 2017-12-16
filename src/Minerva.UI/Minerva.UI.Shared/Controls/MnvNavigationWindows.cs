@@ -39,7 +39,12 @@ namespace Minerva.UI.Controls
         public static readonly DependencyProperty CornerRadiusProperty =
             DependencyProperty.Register(
                 "CornerRadius", typeof(CornerRadius), typeof(MnvNavigationWindows),
-                    new PropertyMetadata(new CornerRadius(5)));
+                    new PropertyMetadata());
+
+        public static readonly DependencyProperty ShadowSizeProperty =
+            DependencyProperty.Register(
+                "ShadowSize", typeof(Thickness), typeof(MnvNavigationWindows),
+                    new PropertyMetadata());
         #endregion
 
         #region [ Private Attributes ]
@@ -48,6 +53,18 @@ namespace Minerva.UI.Controls
         #endregion
 
         #region [ Public Attributes ]
+        public double TestWidth
+        {
+            get
+            {
+                return Width + 300;
+            }
+            set
+            {
+                value = Width;
+            }
+        }
+
         public Brush TitleBackground
         {
             get => (Brush)GetValue(TitleBackgroundProperty);
@@ -93,6 +110,12 @@ namespace Minerva.UI.Controls
         {
             get => (CornerRadius)GetValue(CornerRadiusProperty);
             set => SetValue(CornerRadiusProperty, value);
+        }
+
+        public Thickness ShadowSize
+        {
+            get => (Thickness)GetValue(ShadowSizeProperty);
+            set => SetValue(ShadowSizeProperty, value);
         }
         #endregion
 

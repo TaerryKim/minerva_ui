@@ -8,6 +8,12 @@
         <ResourceDictionary Source="Controls.Buttons.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
+    <!-- Converters -->
+    <Converters:BooleanToVisibilityConverter x:Key="booleanToVisibiltyConverter"/>
+    <Converters:TitleCornerRadiusConverter x:Key="titleCornerRadiusConverter"/>
+    <Converters:WindowWidthForShadowConverter x:Key="widthForShadowConverter"/>
+    <Converters:WindowHeightForShadowConverter x:Key="heightForShadowConverter"/>
+    
     <!-- Kaiser Window Style -->
     <Style TargetType="{x:Type ui:MnvNavigationWindows}">
         <Setter Property="SnapsToDevicePixels" Value="true" />
@@ -15,7 +21,9 @@
         <Setter Property="BorderBrush" Value="{DynamicResource WindowBdBrush}"/>
         <Setter Property="TitleBackground" Value="{DynamicResource WindowTitleBrush}"/>
         <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="CornerRadius" Value="15"/>
         <Setter Property="WindowStyle" Value="None"/>
+        <Setter Property="ShadowSize" Value="5"/>
         <Setter Property="AllowsTransparency" Value="True"/>
         <Setter Property="WindowChrome.WindowChrome">
             <Setter.Value>
@@ -28,13 +36,15 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ui:MnvNavigationWindows}">
-                    <ControlTemplate.Resources>
-                        <Converters:BorderClipConverter x:Key="borderClipConverter"/>
-                        <Converters:BooleanToVisibilityConverter x:Key="booleanToVisibiltyConverter"/>
-                    </ControlTemplate.Resources>
                     <Grid>
+                        <!--<Grid.Width>
+                            <MultiBinding Converter="{StaticResource widthForShadowConverter}">
+                                <Binding RelativeSource="{RelativeSource TemplatedParent}" Path="ActualWidth"/>
+                                <Binding RelativeSource="{RelativeSource TemplatedParent}" Path="ShadowSize"/>
+                            </MultiBinding>
+                        </Grid.Width>-->
                         <Grid>
-                            <Border Margin="4" CornerRadius="15" Background="{TemplateBinding Background}">
+                            <Border Margin="{TemplateBinding ShadowSize}" CornerRadius="{TemplateBinding CornerRadius}" Background="{TemplateBinding Background}">
                                 <Grid>
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="28"/>
@@ -47,7 +57,8 @@
                                     <AdornerDecorator Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" >
                                         <ContentPresenter Content="{TemplateBinding NavigationControl}" SnapsToDevicePixels="True"/>
                                     </AdornerDecorator>
-                                    <Border Grid.Row="0" Grid.Column="1" Background="{TemplateBinding TitleBackground}" CornerRadius="15,15,0,0">
+                                    <Border Grid.Row="0" Grid.Column="1" Background="{TemplateBinding TitleBackground}" 
+                                            CornerRadius="{TemplateBinding CornerRadius, Converter={StaticResource titleCornerRadiusConverter}}">
                                         <ui:MnvSpacingStackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,8,8,0">
                                             <ui:MnvSpacingStackPanel.Resources>
                                                 <Style BasedOn="{StaticResource MnvRoundButtonStyle}" TargetType="{x:Type Button}">

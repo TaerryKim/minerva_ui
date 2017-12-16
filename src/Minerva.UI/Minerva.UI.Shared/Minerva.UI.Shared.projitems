@@ -9,11 +9,12 @@
     <Import_RootNamespace>Minerva.UI</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\TitleCornerRadiusConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Converters\BooleanToVisibilityConverter.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Converters\BorderClipConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Controls\MnvRoundCornerButton.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Controls\MnvNavigationWindows.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Controls\MnvSpacingStackPanel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Converters\WindowSizeWithMarginConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\WindowHeightForShadowConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\WindowWidthForShadowConverter.cs" />
   </ItemGroup>
 </Project>
