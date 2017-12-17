@@ -8,6 +8,9 @@
         <ResourceDictionary Source="../Resources/Paths.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
+    <!-- Converters -->
+    <Converters:IconSizeConverter x:Key="iconMarginConverter"/>
+    
     <!-- Kaiser Check box with text -->
     <Style TargetType="{x:Type ui:MnvCheckBox}">
         <Setter Property="BorderBrush" Value="{DynamicResource ChkBoxBdBrush}"/>
@@ -28,9 +31,6 @@
                             BorderBrush="{TemplateBinding BorderBrush}" 
                             BorderThickness="{TemplateBinding BorderThickness}"
                             Background="{TemplateBinding Background}">
-                        <Border.Resources>
-                            <Converters:IconSizeConverter x:Key="iconMarginConverter"/>
-                        </Border.Resources>
                         <Path x:Name="PART_Symbol" Data="{DynamicResource Path.CheckSymbol}" StrokeThickness="1" Stretch="Fill" 
                               Margin="{Binding Path=Width, Converter={StaticResource iconMarginConverter}, RelativeSource={RelativeSource TemplatedParent}}"/>
                     </Border>
