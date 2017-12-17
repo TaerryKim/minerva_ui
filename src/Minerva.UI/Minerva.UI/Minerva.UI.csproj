@@ -49,6 +49,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Controls\Controls.CheckBoxs.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Controls\Controls.Layouts.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
@@ -63,6 +67,10 @@
     </Page>
     <Page Include="Controls\Controls.Buttons.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </Page>
+    <Page Include="Resources\Paths.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Resources\Fonts.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>

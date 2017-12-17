@@ -1,0 +1,59 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:ui="clr-namespace:Minerva.UI.Controls"
+                    xmlns:Converters="clr-namespace:Minerva.UI.Converters">
+    
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../Themes/KaiserBlue.xaml"/>
+        <ResourceDictionary Source="../Resources/Paths.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <!-- Kaiser Check box with text -->
+    <Style TargetType="{x:Type ui:MnvCheckBox}">
+        <Setter Property="BorderBrush" Value="{DynamicResource ChkBoxBdBrush}"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="MouseOverBrush" Value="Transparent"/>
+        <Setter Property="MouseOverBorderBrush" Value="{DynamicResource ChkBoxOverBdBrush}"/>
+        <Setter Property="MouseClickBrush" Value="{DynamicResource ChkBoxClickBgBrush}"/>
+        <Setter Property="MouseClickBorderBrush" Value="{DynamicResource ChkBoxClickBdBrush}"/>
+        <Setter Property="CheckImageColor" Value="{DynamicResource ChkBoxClickIconBrush}"/>
+        <Setter Property="BorderThickness" Value="2"/>
+        
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ui:MnvCheckBox}">
+                    <Border x:Name="PART_Frame" 
+                            Height="{TemplateBinding Height}" Width="{TemplateBinding Width}" 
+                            CornerRadius="3"
+                            BorderBrush="{TemplateBinding BorderBrush}" 
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            Background="{TemplateBinding Background}">
+                        <Border.Resources>
+                            <Converters:IconSizeConverter x:Key="iconMarginConverter"/>
+                        </Border.Resources>
+                        <Path x:Name="PART_Symbol" Data="{DynamicResource Path.CheckSymbol}" StrokeThickness="1" Stretch="Fill" 
+                              Margin="{Binding Path=Width, Converter={StaticResource iconMarginConverter}, RelativeSource={RelativeSource TemplatedParent}}"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Cursor" Value="Hand"/>
+                        </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsMouseOver" Value="True" />
+                                <Condition Property="IsChecked" Value="False" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="PART_Frame" Property="BorderBrush" Value="{Binding Path=MouseOverBorderBrush, RelativeSource={RelativeSource TemplatedParent}}"/>
+                            <Setter TargetName="PART_Frame" Property="Background" Value="{Binding Path=MouseOverBrush, RelativeSource={RelativeSource TemplatedParent}}"/>
+                        </MultiTrigger>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="PART_Frame" Property="BorderBrush" Value="{Binding Path=MouseClickBorderBrush, RelativeSource={RelativeSource TemplatedParent}}"/>
+                            <Setter TargetName="PART_Frame" Property="Background" Value="{Binding Path=MouseClickBrush, RelativeSource={RelativeSource TemplatedParent}}"/>
+                            <Setter TargetName="PART_Symbol" Property="Fill" Value="{Binding Path=CheckImageColor, RelativeSource={RelativeSource TemplatedParent}}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>
