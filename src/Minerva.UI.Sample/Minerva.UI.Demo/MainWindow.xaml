@@ -7,8 +7,9 @@
         mc:Ignorable="d"
         xmlns:ui="clr-namespace:Minerva.UI.Controls;assembly=Minerva.UI"
         Title="MainWindow" Height="400" Width="337">
-    <Grid>
+    <StackPanel>
         <ui:MnvRoundCornerButton Width="100" Height="100" HorizontalAlignment="Left" Content="Hello"/>
         <ui:MnvRoundCornerButton Width="50" Height="50" Content="Hello" CornerRadius="15" MouseClickBrush="Red"/>
-    </Grid>
+        <ui:MnvCheckBox Width="25" Height="25"/>
+    </StackPanel>
 </ui:MnvNavigationWindows>

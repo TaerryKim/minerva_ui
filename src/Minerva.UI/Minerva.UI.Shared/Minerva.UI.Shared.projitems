@@ -9,6 +9,8 @@
     <Import_RootNamespace>Minerva.UI</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\MnvCheckBox.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\IconSizeConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Converters\TitleCornerRadiusConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Converters\BooleanToVisibilityConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Controls\MnvRoundCornerButton.cs" />

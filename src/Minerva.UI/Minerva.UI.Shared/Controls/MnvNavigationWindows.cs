@@ -53,18 +53,6 @@ namespace Minerva.UI.Controls
         #endregion
 
         #region [ Public Attributes ]
-        public double TestWidth
-        {
-            get
-            {
-                return Width + 300;
-            }
-            set
-            {
-                value = Width;
-            }
-        }
-
         public Brush TitleBackground
         {
             get => (Brush)GetValue(TitleBackgroundProperty);
