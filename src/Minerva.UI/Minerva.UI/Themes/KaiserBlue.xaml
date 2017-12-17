@@ -22,6 +22,13 @@
     <SolidColorBrush x:Key="ButtonMouseClickFgBrush" Color="{DynamicResource White}"/>
     <SolidColorBrush x:Key="ButtonMouseClickBdBrush" Color="{DynamicResource Flat-Blue}"/>
 
+    <!-- Check Box -->
+    <SolidColorBrush x:Key="ChkBoxBdBrush" Color="{DynamicResource Light-Blue-Grey}"/>
+    <SolidColorBrush x:Key="ChkBoxOverBdBrush" Color="{DynamicResource Light-Green}"/>
+    <SolidColorBrush x:Key="ChkBoxClickBgBrush" Color="{DynamicResource Light-Green}"/>
+    <SolidColorBrush x:Key="ChkBoxClickBdBrush" Color="{DynamicResource Light-Green}"/>
+    <SolidColorBrush x:Key="ChkBoxClickIconBrush" Color="White"/>
+    
     <!-- Windows -->
     <SolidColorBrush x:Key="WindowBgBrush"    Color="{DynamicResource Panel-White}"/>
     <SolidColorBrush x:Key="WindowBdBrush"    Color="{DynamicResource Warm-Grey-Two}"/>
