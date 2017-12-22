@@ -30,7 +30,7 @@ namespace Minerva.UI.Controls
 
         public static readonly DependencyProperty NavigationControlProperty =
             DependencyProperty.Register(
-                "NavigationControl", typeof(ContentControl), typeof(MnvNavigationWindows));
+                "NavigationControl", typeof(NavigationMenuBar), typeof(MnvNavigationWindows));
 
         public static readonly DependencyProperty MaximizeButtonProperty =
             DependencyProperty.Register(
@@ -83,9 +83,9 @@ namespace Minerva.UI.Controls
         /// <summary>
         /// Content area for navigation bar
         /// </summary>
-        public ContentControl NavigationControl
+        public NavigationMenuBar NavigationControl
         {
-            get => (ContentControl)GetValue(NavigationControlProperty);
+            get => (NavigationMenuBar)GetValue(NavigationControlProperty);
             set => SetValue(NavigationControlProperty, value);
         }
         public bool MaximizeButton

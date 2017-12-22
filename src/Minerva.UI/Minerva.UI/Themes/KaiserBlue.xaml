@@ -38,4 +38,30 @@
     <SolidColorBrush x:Key="MinimizeButtonColor" Color="{DynamicResource Yellow-Orange}"/>
     <SolidColorBrush x:Key="MaximizeButtonColor" Color="{DynamicResource Weird-Green}"/>
     <SolidColorBrush x:Key="CloseButtonColor"    Color="{DynamicResource Tomato}"/>
+
+    <!-- Sub Menu Item -->
+    <SolidColorBrush x:Key="NavSubMenuTextBrush" Color="White"/>
+
+    <SolidColorBrush x:Key="NavSubMenuBgBrush" Color="{DynamicResource Dark-Slate-Blue-Two}"/>
+    <SolidColorBrush x:Key="MouseOverNavSubMenuBgBrush" Color="{DynamicResource Cobalt}"/>
+    <SolidColorBrush x:Key="MouseClickNavSubMenuBgBrush" Color="{DynamicResource Aqua-Blue-Three}"/>
+
+    <!-- Menu Item-->
+    <SolidColorBrush x:Key="NavMenuFgBrush" Color="{DynamicResource Dirty-Blue}"/>
+    <SolidColorBrush x:Key="NavMenuBgBrush" Color="{DynamicResource Dark-Slate-Blue}"/>
+    
+    <SolidColorBrush x:Key="MouseOverNavMenuLeftBgBrush" Color="{DynamicResource Cobalt}"/>
+    <SolidColorBrush x:Key="MouseOverNavMenuCenterBgBrush" Color="{DynamicResource Cobalt}"/>
+    <SolidColorBrush x:Key="MouseOverNavMenuRightBgBrush" Color="{DynamicResource Cobalt}"/>
+    <SolidColorBrush x:Key="MouseOverNavMenuTextBrush" Color="White"/>
+
+    <SolidColorBrush x:Key="MouseClickNavMenuLeftBgBrush" Color="{DynamicResource Aqua-Blue-Three}"/>
+    <SolidColorBrush x:Key="MouseClickNavMenuCenterBgBrush" Color="{DynamicResource Dark-Slate-Blue-Two}"/>
+    <SolidColorBrush x:Key="MouseClickNavMenuRightBgBrush" Color="{DynamicResource Dark-Slate-Blue}"/>
+
+    <SolidColorBrush x:Key="NavMenuSeperatorBrush" Color="{DynamicResource Metallic-Blue}"/>
+
+    <SolidColorBrush x:Key="NavMenuBarBgBrush" Color="{DynamicResource Dark-Slate-Blue}"/>
+    <SolidColorBrush x:Key="NavMenuBarTitleBgBrush" Color="{DynamicResource Dark-Slate-Blue-Two}"/>
+
 </ResourceDictionary>

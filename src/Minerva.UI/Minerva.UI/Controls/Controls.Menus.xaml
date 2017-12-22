@@ -1,0 +1,163 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:ui="clr-namespace:Minerva.UI.Controls"
+                    xmlns:Extensions="clr-namespace:Minerva.UI.Extensions">
+    
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../Themes/KaiserBlue.xaml"/>
+        <ResourceDictionary Source="../Resources/Colors.xaml"/>
+        <ResourceDictionary Source="../Resources/Fonts.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <!-- Menu Separator Style -->
+    <Style x:Key="MenuSeparatorStyle" TargetType="{x:Type Separator}">
+        <Setter Property="Background" Value="{DynamicResource NavMenuSeperatorBrush}"/>
+        <Setter Property="Height" Value="1"/>
+        <Setter Property="Opacity" Value="0.3"/>
+        <Setter Property="Margin" Value="16,0,16,0"/>
+    </Style>
+
+    <Style TargetType="{x:Type ui:NavigationSubMenuItem}">
+        <Setter Property="Command" Value="{Binding ShipOtherMethodSelected, RelativeSource={RelativeSource Self}}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ui:NavigationSubMenuItem}">
+                    <Border x:Name="PART_Content" Height="35" Background="{DynamicResource NavSubMenuBgBrush}">
+                        <Grid>
+                            <TextBlock Text="{TemplateBinding Title}" 
+                                       FontFamily="{DynamicResource Spoqa_Han_Sans}" FontSize="11" Foreground="{DynamicResource NavSubMenuTextBrush}"
+                                       VerticalAlignment="Center" HorizontalAlignment="Left" Margin="88,0,0,0"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsMouseOver" Value="True" />
+                                <Condition Property="IsChecked" Value="False" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="PART_Content" Property="Background" Value="{DynamicResource MouseOverNavSubMenuBgBrush}"/>
+                            <Setter Property="Cursor" Value="Hand"/>
+                        </MultiTrigger>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="PART_Content" Property="BorderBrush" Value="{DynamicResource MouseClickNavSubMenuBgBrush}"/>
+                            <Setter TargetName="PART_Content" Property="BorderThickness" Value="1.5"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- Kaiser Navigation Bar Menu Style -->
+    <Style TargetType="{x:Type ui:NavigationMenuItem}">
+        <Setter Property="GroupName" Value="KaiserMenuItem"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ui:NavigationMenuItem}">
+                    <Expander IsExpanded="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=IsChecked}"
+                              Extensions:AttachedProperties.HideExpanderArrow="True" Style="{DynamicResource ExpanderStyle}" SnapsToDevicePixels="True">
+                        <Expander.Header>
+                            <StackPanel>
+                                <Grid Height="49.1" Width="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type Expander}},Path=ActualWidth}">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="13"/>
+                                        <ColumnDefinition Width="60"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Border x:Name="PART_LeftGrid" Grid.Column="0" Background="{DynamicResource NavMenuBgBrush}"/>
+                                    <Border x:Name="PART_CenterGrid" Grid.Column="1" Background="{DynamicResource NavMenuBgBrush}">
+                                        <Image x:Name="PART_Icon" Width="30" Height="30" Margin="9.1,0,0,0"
+                                               Source="{Binding Path=NormalSource, RelativeSource={RelativeSource TemplatedParent}}"/>
+                                    </Border>
+                                    <Border x:Name="PART_RightGrid" Grid.Column="2" Background="{DynamicResource NavMenuBgBrush}">
+                                        <TextBlock x:Name="PART_Content"
+                                               FontSize="14" FontFamily="{DynamicResource Spoqa_Han_Sans}" FontWeight="Bold"
+                                               Text="{TemplateBinding Content}" Foreground="{DynamicResource NavMenuFgBrush}"
+                                               Margin ="10,0,0,0" VerticalAlignment="Center"/>
+                                    </Border>
+                                </Grid>
+                                <Separator Style="{StaticResource MenuSeparatorStyle}"/>
+                            </StackPanel>
+                        </Expander.Header>
+                        <Expander.Content>
+                            <ItemsControl Name="SubMenus" ItemsSource="{TemplateBinding SubMenuItems}">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <ui:NavigationSubMenuItem/>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </Expander.Content>
+                    </Expander>
+                    <ControlTemplate.Triggers>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsMouseOver" Value="True" />
+                                <Condition Property="IsChecked" Value="False" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="PART_LeftGrid" Property="Background" Value="{DynamicResource MouseOverNavMenuLeftBgBrush}"/>
+                            <Setter TargetName="PART_CenterGrid" Property="Background" Value="{DynamicResource MouseOverNavMenuCenterBgBrush}"/>
+                            <Setter TargetName="PART_RightGrid" Property="Background" Value="{DynamicResource MouseOverNavMenuRightBgBrush}"/>
+                            <Setter Property="Cursor" Value="Hand"/>
+                        </MultiTrigger>
+                        <Trigger Property="IsChecked" Value="true">
+                            <Setter TargetName="PART_Icon" Property="Source" Value="{Binding Path=ActivatedSource, RelativeSource={RelativeSource TemplatedParent}}"/>
+                            <Setter TargetName="PART_Content" Property="Foreground" Value="{DynamicResource MouseOverNavMenuTextBrush}"/>
+                            <Setter TargetName="PART_LeftGrid" Property="Background" Value="{DynamicResource MouseClickNavMenuLeftBgBrush}"/>
+                            <Setter TargetName="PART_CenterGrid" Property="Background" Value="{DynamicResource MouseClickNavMenuCenterBgBrush}"/>
+                            <Setter TargetName="PART_RightGrid" Property="Background" Value="{DynamicResource MouseClickNavMenuRightBgBrush}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- Kaiser Navigation Bar Style -->
+    <Style TargetType="{x:Type ui:NavigationMenuBar}">
+        <Setter Property="TitleBackground" Value="{DynamicResource NavMenuBarTitleBgBrush}"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="Background" Value="{DynamicResource NavMenuBarBgBrush}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ui:NavigationMenuBar}">
+                    <Border VerticalAlignment="Stretch"
+                            Background="{TemplateBinding Background}"
+                            CornerRadius="0,0,0,10">
+                        <StackPanel>
+                            <Border Height="86.3" VerticalAlignment="Top" 
+                                            Background="{TemplateBinding TitleBackground}"
+                                            BorderBrush="{TemplateBinding BorderBrush}"
+                                            BorderThickness="0,0,0,0.2">
+                                <Border.Effect>
+                                    <DropShadowEffect ShadowDepth="2" Color="#000102" Direction="270" Opacity="0.13"/>
+                                </Border.Effect>
+                                <Grid>
+                                    <!--<Image HorizontalAlignment="Left" VerticalAlignment="Top" Width="41" Height="46" Margin="24,25,0,0"
+                                           Source="/Kaiser.UI;component/Resources/Logo/kaiser_white_logo.png"/>-->
+                                    <!--<TextBlock Margin="80,31,0,0"
+                                                           Foreground="White"
+                                                           LineStackingStrategy="BlockLineHeight"
+                                                           FontSize="26" FontWeight="ExtraBold" FontFamily="{DynamicResource UniNeue_HeavyItalic}"
+                                                           Text="Kaiser">
+                                        <TextBlock.Effect>
+                                            <DropShadowEffect ShadowDepth="2" Opacity="0.06" BlurRadius="4"/>
+                                        </TextBlock.Effect>
+                                    </TextBlock>-->
+                                </Grid>
+                            </Border>
+                            <ItemsControl Name="Menus" ItemsSource="{TemplateBinding MenuItems}" Margin="0,0.8,0,0">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <ui:NavigationMenuItem/>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </StackPanel>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

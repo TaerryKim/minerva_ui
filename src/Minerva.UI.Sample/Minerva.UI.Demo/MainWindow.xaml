@@ -5,8 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Minerva.UI.Demo"
         mc:Ignorable="d"
+        NavigationWidth="208"
         xmlns:ui="clr-namespace:Minerva.UI.Controls;assembly=Minerva.UI"
-        Title="MainWindow" Height="400" Width="337">
+        Title="MainWindow" Height="700" Width="607">
+    <ui:MnvNavigationWindows.NavigationControl>
+        <ui:NavigationMenuBar x:Name="NavigationBar">
+            <ui:NavigationMenuBar.MenuItems>
+                <ui:NavigationMenuItem Content="hello"/>
+                
+                <ui:NavigationMenuItem Content="hello2"/>
+                <ui:NavigationMenuItem Content="hello3">
+                    <ui:NavigationMenuItem.SubMenuItems>
+                        <ui:NavigationSubMenuItem Content="haha"/>
+                        <ui:NavigationSubMenuItem Content="haha2" IsChecked="True"/>
+                    </ui:NavigationMenuItem.SubMenuItems>
+                </ui:NavigationMenuItem>
+            </ui:NavigationMenuBar.MenuItems>
+            
+          </ui:NavigationMenuBar>
+    </ui:MnvNavigationWindows.NavigationControl>
     <StackPanel>
         <ui:MnvRoundCornerButton Width="100" Height="100" HorizontalAlignment="Left" Content="Hello"/>
         <ui:MnvRoundCornerButton Width="50" Height="50" Content="Hello" CornerRadius="15" MouseClickBrush="Red"/>

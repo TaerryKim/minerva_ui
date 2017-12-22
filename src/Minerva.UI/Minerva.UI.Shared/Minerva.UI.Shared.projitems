@@ -9,7 +9,12 @@
     <Import_RootNamespace>Minerva.UI</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\Menus\NavigationMenuCollection.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\Menus\NavigationSubMenuCollection.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Controls\MnvCheckBox.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\NavigationMenuBar.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\NavigationMenuItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\NavigationSubMenuItem.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Converters\IconSizeConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Converters\TitleCornerRadiusConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Converters\BooleanToVisibilityConverter.cs" />
@@ -18,5 +23,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Controls\MnvSpacingStackPanel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Converters\WindowHeightForShadowConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Converters\WindowWidthForShadowConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\AttachedProperties.cs" />
   </ItemGroup>
 </Project>
